@@ -8,9 +8,18 @@ body{
 }
 
 #hero{
+    display: flex;
+    flex-direction: column;
     color:white;
+    flex-grow: 1;
+    
 }
 
+.contain{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 .navbar{
     font-size: 20px;
 }
@@ -20,3 +29,21 @@ body{
 }
 
 
+.hero-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.hero-head h1 {
+    font-size: 82px;
+    font-family: "roboto";
+}
+
+.btn{
+    --bs-btn-font-size: 25px;
+}
