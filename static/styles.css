@@ -49,6 +49,8 @@ body{
 .button {
     display:flex;
     gap: 12px;
+    justify-content: center;
+    margin-top: 12px;
 }
 .btn{
     --bs-btn-font-size: 18px;
@@ -57,6 +59,8 @@ body{
 }
 
 .search {
+    display:flex;
+    flex-direction: column;
     width: 574px;
     height: 46px;
 

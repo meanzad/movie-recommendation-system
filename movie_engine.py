@@ -1,21 +1,26 @@
 import pandas as pd
+import re
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import numpy as np
+
+from flask import Flask,redirect,render_template, request, session
+
 movies = pd.read_csv("movies.csv")
 
-import re
 
 def clean_title(title):
     return re.sub("[^a-zA-Z0-9 ]","",title)
 
 movies["clean_title"] = movies["title"].apply(clean_title)
 
-from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 vectorizer = TfidfVectorizer(ngram_range=(1,2),analyzer="char_wb")
 
 tfidf = vectorizer.fit_transform(movies['clean_title'])
 
-from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
+
 
 def search(title):
     title = clean_title(title)
