@@ -38,19 +38,35 @@
                         <h1>Loved it? <span class="head-text">Find more.</span></h1>
                     </div>
                     <div class = "search">
-                      <form action="/search" method="get">
-                        <input type = "text" class="form-control" name="search" autofocus placeholder="search">
+                     
+                        <input type = "text" class="form-control" name="q" id="q" autofocus placeholder="search">
                         <div class = "button">
-                          <button type="submit" class="btn btn-dark">Search</button>
+                          <button type="submit" onclick="search_movie()" class="btn btn-dark">Search</button>
                           <button type="button" class="btn btn-dark .btn-lg">Suggest</button>
-                      </div>
-                      </form>
+                        </div>
+             
                         
                     </div>
                    
                 </div>
 
             </div>
+
+            <div class="results">
+              <table>
+                <thead>
+                  <tr>
+                    <th>MovieId</th>
+                    <th>title</th>
+                  </tr>
+                </thead>
+    
+                <tbody id ="result">
+    
+                </tbody>
+              </table>
+            </div>
         </section>
+        
     </body>
 </html>

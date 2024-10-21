@@ -18,7 +18,22 @@ function search_movie() {
         }
 
         response.json().then(function(data){
-            console.log(data);
+            let table = document.querySelector('#result');
+
+            let out = "";
+
+            for (let movie of data){
+
+                out += `
+                    <tr>
+                        <td>${movie.movieId}</td>
+                        <td>${movie.title}</td>
+                    </tr>
+                
+                `
+            }
+
+            table.innerHTML = out;
         })
     })
 }

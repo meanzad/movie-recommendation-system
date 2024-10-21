@@ -1,4 +1,4 @@
-from flask import Flask,redirect,render_template, request, session
+from flask import Flask,redirect,render_template, request, session, make_response
 
 from movie_engine import search as msearch
 
@@ -10,11 +10,13 @@ def index():
 
 @app.route("/search",methods=["GET","POST"])
 def search():
-    if request.method == "GET":
-        query = request.args.get("search")
-        print(query)
+    if request.method == "POST":
+        query = request.get_json()
         res = msearch(query)
-        print(res[["movieId","title"]].to_json(orient="records"))
+        res = res[["movieId","title"]].to_json(orient="records")
+        print(res)
+        res = make_response(res,200)
         return res
+      
     
     return render_template("index.html")
