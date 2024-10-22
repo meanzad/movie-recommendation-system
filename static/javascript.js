@@ -1,6 +1,14 @@
 function search_movie() {
 
     var query = document.getElementById("q").value;
+
+    if (query === "")
+    {
+        let list = document.querySelector('#result');
+        list.innerHTML = "";
+        return;
+    }
+        
     
     fetch(`${window.origin}/search`, {
         method: "POST",
@@ -18,22 +26,18 @@ function search_movie() {
         }
 
         response.json().then(function(data){
-            let table = document.querySelector('#result');
+            let list = document.querySelector('#result');
 
             let out = "";
 
             for (let movie of data){
 
                 out += `
-                    <tr>
-                        <td>${movie.movieId}</td>
-                        <td>${movie.title}</td>
-                    </tr>
-                
+                    <li>${movie.title}</li>
                 `
             }
 
-            table.innerHTML = out;
+            list.innerHTML = out;
         })
     })
 }

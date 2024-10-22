@@ -37,35 +37,27 @@
                     <div class="hero-head">
                         <h1>Loved it? <span class="head-text">Find more.</span></h1>
                     </div>
-                    <div class = "search">
-                     
-                        <input type = "text" class="form-control" name="q" id="q" autofocus placeholder="search" oninput="search_movie()">
-                        <div class = "button">
-                          <button type="submit" onclick="search_movie()" class="btn btn-dark">Search</button>
-                          <button type="button" class="btn btn-dark .btn-lg">Suggest</button>
-                        </div>
-             
+
+                    <div class = "search-box">
+                      <div class="row">
+                        <input type = "text" class="" name="q" id="q" autofocus autocomplete="off" placeholder="search" oninput="search_movie()">
+                      </div>
                         
+                        <div class="results">
+                          <ul id = "result">
+                          </ul>
+                        </div>
+                    </div>
+                    <div class = "button">
+                      <button type="submit" onclick="search_movie()" class="btn btn-dark">Search</button>
+                      <button type="button" class="btn btn-dark .btn-lg">Suggest</button>
                     </div>
                    
                 </div>
 
             </div>
 
-            <div class="results">
-              <table>
-                <thead>
-                  <tr>
-                    <th>MovieId</th>
-                    <th>title</th>
-                  </tr>
-                </thead>
-    
-                <tbody id ="result">
-    
-                </tbody>
-              </table>
-            </div>
+            
         </section>
         
     </body>
