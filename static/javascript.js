@@ -1,3 +1,13 @@
+function selectInput(select) {
+
+    var query = document.getElementById("q");
+    query.value = select.innerHTML;
+    let list = document.querySelector('#result');
+    list.innerHTML = "";
+    return;
+}
+
+
 function search_movie() {
 
     var query = document.getElementById("q").value;
@@ -33,11 +43,15 @@ function search_movie() {
             for (let movie of data){
 
                 out += `
-                    <li>${movie.title}</li>
+                    <li onclick="selectInput(this)">${movie.title}</li>
                 `
             }
 
             list.innerHTML = out;
         })
     })
+
+    
 }
+
+
