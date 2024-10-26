@@ -49,3 +49,8 @@ def find_similar_movies(movie_id):
     
     rec_percentages = rec_percentages.sort_values("score",ascending = False)
     return rec_percentages.head(10).merge(movies,on = "movieId")[["score","title","genres"]]
+
+
+x = find_similar_movies(4896)
+print(x)
+print("hello world")

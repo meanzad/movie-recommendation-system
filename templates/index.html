@@ -40,7 +40,10 @@
 
                     <div class = "search-box">
                       <div class="row">
+                        <form action="/recommend" method="post" id="movie-form">
                         <input type = "text" class="" name="q" id="q" autofocus autocomplete="off" placeholder="search" onkeyup="search_movie()">
+                        <input type="hidden" name="movieId" id ="queryId">
+                      </form>
                       </div>
                         
                         <div class="results">
@@ -49,7 +52,7 @@
                         </div>
                     </div>
                     <div class = "button">
-                      <button type="submit" onclick="search_movie()" class="btn btn-dark">Search</button>
+                      <button type="submit" form="movie-form" class="btn btn-dark">Search</button>
                       <button type="button" class="btn btn-dark .btn-lg">Suggest</button>
                     </div>
                    

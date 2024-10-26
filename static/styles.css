@@ -109,3 +109,8 @@ input{
 .results ul li:hover{
     background: #e9f3ff;
 }
+
+#movie-form {
+    display:flex;
+    flex-direction: column;
+}

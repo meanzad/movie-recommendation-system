@@ -1,7 +1,10 @@
 function selectInput(select) {
 
     var query = document.getElementById("q");
-    query.value = select.innerHTML;
+    query.value = select.getElementsByTagName('span')[0].innerHTML;
+    var queryid = document.getElementById("queryId");
+    queryid.value = select.getElementsByTagName('input')[0].value;
+    console.log(queryid.value)
     let list = document.querySelector('#result');
     list.innerHTML = "";
     return;
@@ -43,7 +46,10 @@ function search_movie() {
             for (let movie of data){
 
                 out += `
-                    <li onclick="selectInput(this)">${movie.title}</li>
+                    <li onclick="selectInput(this)">
+                    <span>${movie.title}</span>
+                    <input type='hidden' value="${movie.movieId}">
+                    </li>
                 `
             }
 
