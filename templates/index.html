@@ -1,7 +1,7 @@
 {% extends "layout.html"%}
 
 {% block title %}home{% endblock %}
-
+{% block nav1 %} active {% endblock %}
 {% block main %}
   <div class="hero-box">
     <div class="hero-head">
@@ -12,7 +12,7 @@
       <div class="row">
         <form action="/recommend" method="post" id="movie-form">
         <input type = "text" class="" name="q" id="q" autofocus autocomplete="off" placeholder="search" onkeyup="search_movie()">
-        <input type="hidden" name="movieId" id ="queryId">
+        <input type="hidden" name="movieId" id ="queryId" required>
       </form>
       </div>
         

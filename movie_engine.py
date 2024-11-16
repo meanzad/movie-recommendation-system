@@ -8,6 +8,7 @@ from flask import Flask,redirect,render_template, request, session
 
 movies = pd.read_csv("movies.csv")
 
+top = pd.read_csv("imdb_top_1000.csv")
 
 def clean_title(title):
     return re.sub("[^a-zA-Z0-9 ]","",title)
@@ -50,3 +51,6 @@ def find_similar_movies(movie_id):
     rec_percentages = rec_percentages.sort_values("score",ascending = False)
     return rec_percentages.head(10).merge(movies,on = "movieId")[["score","title","genres"]]
 
+
+def top_hundred():
+    return top[["Poster_Link","Series_Title","Genre","IMDB_Rating"]].head(100)

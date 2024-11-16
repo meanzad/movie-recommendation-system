@@ -2,6 +2,8 @@
 
 {% block title %} recommend {% endblock %}
 
+{% block nav2 %}active{% endblock %}
+
 {%block main %}
 <div class="rec-box">
     <div class="rec-head">
@@ -16,10 +18,10 @@
         </tr>
     </thead>
     <tbody>
-        {%for movie in rec%}
+        {%for movie in toph%}
             <tr>
-                <td>{{movie.title}}</td>
-                <td>{{movie.genres}}</td>
+                <td>{{movie.Series_Title}}</td>
+                <td>{{movie.Genre}}</td>
             </tr>
         {%endfor%}
     </tbody>

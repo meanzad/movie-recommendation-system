@@ -103,3 +103,24 @@ input{
     display:flex;
     flex-direction: column;
 }
+
+.rec-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+}
+
+.rec-head{
+    margin-top: 82px;
+    margin-bottom: 52px;
+}
+
+.rec-head h1 {
+    color: white;
+    font-size: 54px;
+    font-family:'Poppins','Courier New', Courier, monospace;
+    font-weight: 600;
+}

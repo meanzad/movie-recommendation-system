@@ -2,6 +2,7 @@ from flask import Flask,redirect,render_template, request, session, make_respons
 
 from movie_engine import search as msearch
 from movie_engine import find_similar_movies as findsim
+from movie_engine import top_hundred
 
 app = Flask(__name__)
 
@@ -21,15 +22,23 @@ def search():
     
     return render_template("index.html")
 
-@app.route("/recommend",methods=["GET","POST"])
+@app.route("/recommend",methods=["GET","POST"]) 
 def recommend():
     if request.method == "POST":
-        qid = int(request.form.get('movieId'))
+        qid = request.form.get('movieId')
+        if not qid:
+            return render_template("sorry.html")
+        qid = int(qid)
         rec = findsim(qid)
+        if rec.empty:
+            return render_template("sorry.html")
         rec = rec[["title","genres"]].to_dict('records')
-        print(rec)
         return render_template("recommend.html",rec=rec)
 
-      
-    
     return render_template("recommend.html")
+
+@app.route("/top")
+def top():
+    toph = top_hundred()
+    toph = toph.to_dict('records')
+    return render_template("top.html",toph=toph)

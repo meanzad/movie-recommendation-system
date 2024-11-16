@@ -13,18 +13,18 @@
     </head>
 
     <body>
-            <div class="contain">
+      
                 <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
                     <div class="container-fluid">
-                      <a class="navbar-brand" href="#">Movie Recommendation Engine 1.0</a>
+                      <a class="navbar-brand" href="/">Movie Recommendation Engine 1.0</a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
                       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <nav class="navbar-nav">
-                          <a class="nav-link active" aria-current="page" href="/">Search</a>
-                          <a class="nav-link" href="#">Top Rated</a>
-                          <a class="nav-link" href="#">About</a>
+                          <a class="nav-link {% block nav1 %}{% endblock %}" aria-current="page" href="/">Search</a>
+                          <a class="nav-link {% block nav2 %}{% endblock %}" href="/top">Top Rated</a>
+                          <a class="nav-link {% block nav3 %}{% endblock %}" href="#">About</a>
                 
                         </nav>
                       </div>
