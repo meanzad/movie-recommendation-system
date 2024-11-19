@@ -3,6 +3,7 @@ from flask import Flask,redirect,render_template, request, session, make_respons
 from movie_engine import search as msearch
 from movie_engine import find_similar_movies as findsim
 from movie_engine import top_hundred
+from movie_engine import suggest
 
 app = Flask(__name__)
 
@@ -42,3 +43,9 @@ def top():
     toph = top_hundred()
     toph = toph.to_dict('records')
     return render_template("top.html",toph=toph)
+
+@app.route("/suggest")
+def sug_mov():
+    sug = suggest()
+    sug = sug.to_dict('records')
+    return render_template("suggest.html",sug=sug)

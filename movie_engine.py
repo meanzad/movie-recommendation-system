@@ -3,6 +3,7 @@ import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+import random
 
 from flask import Flask,redirect,render_template, request, session
 
@@ -54,3 +55,15 @@ def find_similar_movies(movie_id):
 
 def top_hundred():
     return top[["Poster_Link","Series_Title","Genre","IMDB_Rating"]].head(100)
+
+def suggest():
+
+    ind = random.sample(range(1001), 10)
+    ind.sort()
+    res = top.iloc[ind]
+    return res[["Poster_Link","Series_Title","Genre","IMDB_Rating"]]
+
+    
+
+    
+

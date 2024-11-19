@@ -124,3 +124,14 @@ input{
     font-family:'Poppins','Courier New', Courier, monospace;
     font-weight: 600;
 }
+
+.poster {
+    width: 75px;
+    height: auto;
+}
+
+.table {
+    padding: 150px;
+    margin: auto;
+    width: 1500px;
+}
