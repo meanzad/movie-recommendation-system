@@ -50,7 +50,7 @@ def find_similar_movies(movie_id):
     rec_percentages["score"] = rec_percentages["similar"] / rec_percentages["all"]
     
     rec_percentages = rec_percentages.sort_values("score",ascending = False)
-    return rec_percentages.head(10).merge(movies,on = "movieId")[["score","title","genres"]]
+    return rec_percentages.iloc[range(1,11)].merge(movies,on = "movieId")[["score","title","genres"]]
 
 
 def top_hundred():
