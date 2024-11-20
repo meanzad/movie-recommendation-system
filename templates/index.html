@@ -10,7 +10,7 @@
 
     <div class = "search-box">
       <div class="row">
-        <form action="/recommend" method="post" id="movie-form">
+        <form name="movie-form" onsubmit="return validateForm()" action="/recommend" method="post" id="movie-form">
         <input type = "text" class="" name="q" id="q" autofocus autocomplete="off" placeholder="search" onkeyup="search_movie()" required>
         <input type="hidden" name="movieId" id ="queryId" required>
       </form>

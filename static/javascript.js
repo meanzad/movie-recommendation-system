@@ -4,7 +4,6 @@ function selectInput(select) {
     query.value = select.getElementsByTagName('span')[0].innerHTML;
     var queryid = document.getElementById("queryId");
     queryid.value = select.getElementsByTagName('input')[0].value;
-    console.log(queryid.value)
     let list = document.querySelector('#result');
     list.innerHTML = "";
     return;
@@ -56,8 +55,15 @@ function search_movie() {
             list.innerHTML = out;
         })
     })
-
-    
 }
+
+function validateForm() {
+    var x = document.forms["movie-form"]["movieId"].value;
+    if (x == "") {
+      alert("Please select a movie from the list");
+      return false;
+    }
+  }
+  
 
 

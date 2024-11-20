@@ -33,6 +33,7 @@ def recommend():
         rec = findsim(qid)
         if rec.empty:
             return render_template("sorry.html")
+        rec = rec.iloc[range(1,11)]
         rec = rec[["title","genres"]].to_dict('records')
         return render_template("recommend.html",rec=rec)
 
