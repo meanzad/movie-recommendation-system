@@ -1,7 +1,9 @@
 # Movie Recommendation Engine
 #### Video Demo:  https://youtu.be/Podpd687mEw
-#### Description: Movie Recommendation engine built using pandas and flask in python.
+#### Description: Movie Recommendation engine
 
-Search a movie that you like and the engine will suggest you 10 movies.
-The algorithm works by finding similar users, users that have rated the movie that you searched atleast 4/5, and finding the movies that atleast 10 percent of them have liked.
-Then the list is filtered for general well liked movies and sorted, obtaining the result.
+This movie recommendation website is an interactive website built using Flask, Python, and JavaScript, with data processing powered by Pandas and scikit-learn. The website's goal is to allow users to search for movies, receive recommendations, and explore curated lists. By combining backend data processing with a responsive frontend, the platform provides a seamless user experience.
+
+Initially the movie engine was implemented in Jupyter Notebook to test the algorithm, then it was converted to a normal python file.
+
+The datasets used in this project are linked here
