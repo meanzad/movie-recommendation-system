@@ -123,6 +123,7 @@ input{
     font-size: 54px;
     font-family:'Poppins','Courier New', Courier, monospace;
     font-weight: 600;
+    margin:50px;
 }
 
 .poster {
@@ -134,4 +135,13 @@ input{
     padding: 150px;
     margin: auto;
     width: 1500px;
+}
+
+.top-box {
+    background-color: #212529;
+    border-radius: 25px;
+}
+
+.sorry-box{
+    width: 75%;
 }
