@@ -6,6 +6,7 @@ This movie recommendation website is an interactive website built using Flask, P
 
 Initially the movie engine was implemented in Jupyter Notebook to test the algorithm, then it was converted to a normal python file. While implementing in jupyter notebook, working with widgets was the method chosen to make the notebook interactive.
 
-#####The datasets used in this project are linked here:
+The datasets used in this project are linked here:
+
 https://files.grouplens.org/datasets/movielens/ml-25m.zip - only movies.csv and ratings.csv are used from this dataset for the recommendation algorithm.
 
