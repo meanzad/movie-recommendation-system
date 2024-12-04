@@ -10,3 +10,13 @@ Initially the movie engine was implemented in Jupyter Notebook to test the algor
 
 https://files.grouplens.org/datasets/movielens/ml-25m.zip - only movies.csv and ratings.csv are used from this dataset for the recommendation algorithm.
 
+https://www.kaggle.com/datasets/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows - this dataset was used for the top 1000 movies list and the suggest feature.
+
+only the tep 1000 dataset has links for posters, this is why posters are absent in the recommendation feature.
+
+#### Recommendation engine: movie_engine.py
+
+
+
+
+
