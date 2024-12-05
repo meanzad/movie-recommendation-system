@@ -16,7 +16,27 @@ only the tep 1000 dataset has links for posters, this is why posters are absent 
 
 #### Recommendation engine: movie_engine.py
 
+The movie engine uses a Collaborative Filtering algorithm to make a list of recommendations.
 
+##### What is collaborative Filtering?
+
+Collaborative filtering is an information retrieval method that recommends items to users based on how other users with similar preferences and behavior have interacted with that item.
+
+The movie recommendation engine first implements a search engine, which is used to identify the movie from the dataset based on the users input.
+
+##### Search Engine:
+
+The search function in movie engine initially takes an input from the user and cleans the title using the clean title function, which removes anything other than the alphanumeric characters from the title using the regular expressions module.
+
+The same clean title function is appled to all the titles in the movies dataset, so that the searched title and the dataset will have similar values.
+
+Term Frequency - Inverse Document Frequency Vectorizer from the science toolkit module is the main operation behind the search engine.
+
+TfIdf is used to identify how important a particular word is in a text.
+
+Term Frequency: In document d, the frequency represents the number of instances of a given word t.
+
+Document Frequency: The occurence of the word t in the documents,i.e, the number of documents in which the word is present.
 
 
 
