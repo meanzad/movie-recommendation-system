@@ -51,6 +51,15 @@ Now that we have transformed the titles to TFIDF vectors, we can implement the s
 Cosine similarity is a mathematical way to measure the similarity between two vectors or sets of information. It's implemented using the sklearn module.
 np.argpartition gives us the sorted indices of the 5 highest similarites, which is then used to index into the movies dataframe to get the 5 closest search results.
 
+##### Recommendation_Engine:
+
+The recommendation algorithm uses a collaborative filtering algoirthm using Pandas to suggest movies.
+
+The algorithm begins by finding simliar_users from the ratings dataset that have given the movie being queried a rating greater than 4.
+Then similar_user_recs is found out by finding the movieIds of all the movies rated above 4 by the similar_users.
+
+
+
 
 
 
