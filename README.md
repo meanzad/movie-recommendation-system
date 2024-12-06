@@ -6,7 +6,7 @@ This movie recommendation website is an interactive website built using Flask, P
 
 Initially the movie engine was implemented in Jupyter Notebook to test the algorithm, then it was converted to a normal python file. While implementing in jupyter notebook, working with widgets was the method chosen to make the notebook interactive.
 
-##### The datasets used in this project are linked here:
+#### The datasets used in this project are linked here:
 
 https://files.grouplens.org/datasets/movielens/ml-25m.zip - only movies.csv and ratings.csv are used from this dataset for the recommendation algorithm.
 
@@ -24,7 +24,7 @@ Collaborative filtering is an information retrieval method that recommends items
 
 The movie recommendation engine first implements a search engine, which is used to identify the movie from the dataset based on the users input.
 
-##### Search Engine:
+#### Search Engine:
 
 The search function in movie engine initially takes an input from the user and cleans the title using the clean title function, which removes anything other than the alphanumeric characters from the title using the regular expressions module.
 
@@ -51,7 +51,7 @@ Now that we have transformed the titles to TFIDF vectors, we can implement the s
 Cosine similarity is a mathematical way to measure the similarity between two vectors or sets of information. It's implemented using the sklearn module.
 np.argpartition gives us the sorted indices of the 5 highest similarites, which is then used to index into the movies dataframe to get the 5 closest search results.
 
-##### Recommendation_Engine:
+#### Recommendation_Engine:
 
 The recommendation algorithm uses a collaborative filtering algoirthm using Pandas to suggest movies.
 
