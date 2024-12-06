@@ -6,6 +6,8 @@ This movie recommendation website is an interactive website built using Flask, P
 
 Initially the movie engine was implemented in Jupyter Notebook to test the algorithm, then it was converted to a normal python file. While implementing in jupyter notebook, working with widgets was the method chosen to make the notebook interactive.
 
+The front-end of the website is implemented using HTML,CSS and bootstrap.
+
 #### The datasets used in this project are linked here:
 
 https://files.grouplens.org/datasets/movielens/ml-25m.zip - only movies.csv and ratings.csv are used from this dataset for the recommendation algorithm.
@@ -59,7 +61,7 @@ the function sends an AJAX request (using fetch) to the /search route, passing t
 
 It receives a list of matching movies from the server and dynamically updates the search results in the HTML.
 
-#### Recommendation_Engine:
+#### Recommendation Algorithm:
 
 The recommendation algorithm uses a collaborative filtering algoirthm using Pandas to suggest movies.
 
@@ -76,6 +78,42 @@ A higher score indicates that the movie is relatively more popular among similar
 This prioritizes movies that are highly rated by similar users but not necessarily universally popular, enhancing personalization.
 
 the score is then sorted and the top 11 movies are returned, the top movie will always be the movie searched, so it is excluded and the rest 10 are the final recommended movies by the engine.
+
+#### Flask application: backend
+
+At the heart of the platform is the Flask application, which handles routing, user requests, and integration with the recommendation engine. The Flask app includes several routes:
+
+##### Index Route (/):
+
+Serves the homepage, allowing users to navigate to search, recommendations, or curated movie lists.
+
+##### Search Route (/search):
+
+Handles movie search queries submitted by users.
+
+When a search term is entered, the route fetches data from the recommendation engine using the search() function.
+
+Results are returned as a JSON object containing a list of matching movies with their IDs and titles.
+
+##### Recommendation Route (/recommend):
+
+Allows users to request recommendations for a specific movie by providing its ID.
+
+The route interacts with the find_similar_movies() function in the recommendation engine to fetch the ten most similar movies.
+
+Recommendations are displayed, including titles and genres.
+
+##### Top Movies Route (/top):
+
+Displays a curated list of the top 100 IMDb movies using the top_hundred() function.
+
+Users can view key details such as movie posters, titles, genres, and IMDb ratings.
+
+##### Random Suggestions Route (/suggest):
+
+Offers a random selection of ten movies from the IMDb dataset.
+
+This feature is powered by the suggest() function, which ensures that each visit delivers a fresh set of movies.
 
 
 
