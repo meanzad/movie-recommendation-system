@@ -58,6 +58,17 @@ The recommendation algorithm uses a collaborative filtering algoirthm using Pand
 The algorithm begins by finding simliar_users from the ratings dataset that have given the movie being queried a rating greater than 4.
 Then similar_user_recs is found out by finding the movieIds of all the movies rated above 4 by the similar_users.
 
+similar_user_recs is the filtered to obtain those movies that atleast 10 percent of the similar users have liked.
+
+then we calculate the percentage of general users who gave each movie a high rating in order to normalize the recommendations by accounting for overall popularity and avoid overfitting to the preferences of the "similar users".
+
+The percentages from "similar users" (similar_user_recs) and "general users" (all_user_recs) are then combined to calculate a "score" for each movie by dividing the "similar" percentage by the "all" percentage.
+A higher score indicates that the movie is relatively more popular among similar users compared to the general population.
+
+This prioritizes movies that are highly rated by similar users but not necessarily universally popular, enhancing personalization.
+
+the score is then sorted and the top 11 movies are returned, the top movie will always be the movie searched, so it is excluded and the rest 10 are the final recommended movies by the engine.
+
 
 
 
