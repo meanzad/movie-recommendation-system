@@ -38,5 +38,13 @@ Term Frequency: In document d, the frequency represents the number of instances 
 
 Document Frequency: The occurence of the word t in the documents,i.e, the number of documents in which the word is present.
 
+Inverse Document Frequency: The IDF of the word is the number of documents in the corpus separated by the frequency of the text.
+
+Therefore the weight of each title is calculated using the term-frequency and inverse document frequency, a word that occurs more times in a title(higher frequency) is more important and words that are present in many titles(like 'The", 'a') are less important due to IDF.
+
+using the TFIDF vectorizer in the sklearn module, we can transform the titles in movies.csv to a collection of vectors of each word and their and weight values.
+
+setting the ngram_range parameters as 1,2 will help us to weigh combinatos of 1 and 2 words. setting analyzer = ‘char_wb’ creates character n-grams only from text inside word boundaries; n-grams at the edges of words are padded with space.
+
 
 
