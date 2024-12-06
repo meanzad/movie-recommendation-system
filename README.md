@@ -2,28 +2,32 @@
 ### Video Demo:  https://youtu.be/Podpd687mEw
 ### Description: Movie Recommendation engine
 
-This movie recommendation website is an interactive website built using Flask, Python, and JavaScript, with data processing powered by Pandas and scikit-learn. The website's goal is to allow users to search for movies, receive recommendations, and explore curated lists. By combining back-end data processing with a responsive front-end, the platform provides a seamless user experience.
+The movie recommendation website is an interactive website built using Flask, Python, and JavaScript, with data processing powered by Pandas and scikit-learn. The website's goal is to allow users to search for movies, receive recommendations, and explore curated lists. By combining back-end data processing with a responsive front-end, the platform provides a seamless user experience.
 
 Initially the movie engine was implemented in Jupyter Notebook to test the algorithm, then it was converted to a normal python file. While implementing in jupyter notebook, working with widgets was the method chosen to make the notebook interactive.
 
 The front-end of the website is implemented using HTML,CSS and bootstrap.
 
-The datasets used in this project are linked here:
+#### The datasets used in this project are linked here:
+
 https://files.grouplens.org/datasets/movielens/ml-25m.zip - only movies.csv and ratings.csv are used from this dataset for the recommendation algorithm.
 
 https://www.kaggle.com/datasets/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows - this dataset was used for the top 1000 movies list and the suggest feature.
 
 only the top 1000 dataset has links for posters, this is why posters are absent in the recommendation feature.
 
-Recommendation engine: movie_engine.py
+#### Recommendation engine: movie_engine.py
+
 The movie engine uses a Collaborative Filtering algorithm to make a list of recommendations.
 
-What is collaborative Filtering?
+##### What is collaborative Filtering?
+
 Collaborative filtering is an information retrieval method that recommends items to users based on how other users with similar preferences and behaviour have interacted with that item.
 
 The movie recommendation engine first implements a search engine, which is used to identify the movie from the dataset based on the users input.
 
-Search Engine:
+#### Search Engine:
+
 The search function in movie engine initially takes an input from the user and cleans the title using the clean title function, which removes anything other than the alphanumeric characters from the title using the regular expressions module.
 
 The same clean title function is applied to all the titles in the movies dataset, so that the searched title and the dataset will have similar values.
@@ -48,14 +52,16 @@ Now that we have transformed the titles to TFIDF vectors, we can implement the s
 
 Cosine similarity is a mathematical way to measure the similarity between two vectors or sets of information. It's implemented using the sklearn module. np.argpartition gives us the sorted indices of the 5 highest similarities, which is then used to index into the movies dataframe to get the 5 closest search results.
 
-Javascript for real-time result fetching
+#### Javascript for real-time result fetching
+
 When something is typed on the search box in the index page, the onkeyup() event detects it and calls the search_movie() function implemented in javascript.
 
 the function sends an AJAX request (using fetch) to the /search route, passing the search query.
 
 It receives a list of matching movies from the server and dynamically updates the search results in the HTML.
 
-Recommendation Algorithm:
+#### Recommendation Algorithm:
+
 The recommendation algorithm uses a collaborative filtering algorithm using Pandas to suggest movies.
 
 The algorithm begins by finding similar_users from the ratings dataset that have given the movie being queried a rating greater than 4. Then similar_user_recs is found out by finding the movieIds of all the movies rated above 4 by the similar_users.
@@ -70,13 +76,15 @@ This prioritizes movies that are highly rated by similar users but not necessari
 
 the score is then sorted and the top 11 movies are returned, the top movie will always be the movie searched, so it is excluded and the rest 10 are the final recommended movies by the engine.
 
-Flask application: back-end
+#### Flask application: back-end
 At the heart of the platform is the Flask application, which handles routing, user requests, and integration with the recommendation engine. The Flask app includes several routes:
 
 Index Route (/):
+
 Serves the homepage, allowing users to navigate to search, recommendations, or curated movie lists.
 
 Search Route (/search):
+
 Handles movie search queries submitted by users.
 
 When a search term is entered, the route fetches data from the recommendation engine using the search() function.
@@ -84,6 +92,7 @@ When a search term is entered, the route fetches data from the recommendation en
 Results are returned as a JSON object containing a list of matching movies with their IDs and titles.
 
 Recommendation Route (/recommend):
+
 Allows users to request recommendations for a specific movie by providing its ID.
 
 The route interacts with the find_similar_movies() function in the recommendation engine to fetch the ten most similar movies.
@@ -91,11 +100,13 @@ The route interacts with the find_similar_movies() function in the recommendatio
 Recommendations are displayed, including titles and genres.
 
 Top Movies Route (/top):
+
 Displays a curated list of the top 100 IMDb movies using the top_hundred() function.
 
 Users can view key details such as movie posters, titles, genres, and IMDb ratings.
 
 Random Suggestions Route (/suggest):
+
 Offers a random selection of ten movies from the IMDb dataset.
 
 This feature is powered by the suggest() function, which ensures that each visit delivers a fresh set of movies.
