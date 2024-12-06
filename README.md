@@ -51,6 +51,14 @@ Now that we have transformed the titles to TFIDF vectors, we can implement the s
 Cosine similarity is a mathematical way to measure the similarity between two vectors or sets of information. It's implemented using the sklearn module.
 np.argpartition gives us the sorted indices of the 5 highest similarites, which is then used to index into the movies dataframe to get the 5 closest search results.
 
+##### Javascript for real-time result fetching
+
+When something is typed on the search box in the index page, the onkeyup() event detects it and calls the search_movie() function implemented in javascript.
+
+the function sends an AJAX request (using fetch) to the /search route, passing the search query.
+
+It receives a list of matching movies from the server and dynamically updates the search results in the HTML.
+
 #### Recommendation_Engine:
 
 The recommendation algorithm uses a collaborative filtering algoirthm using Pandas to suggest movies.
