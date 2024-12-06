@@ -79,7 +79,7 @@ the score is then sorted and the top 11 movies are returned, the top movie will 
 #### Flask application: back-end
 At the heart of the platform is the Flask application, which handles routing, user requests, and integration with the recommendation engine. The Flask app includes several routes:
 
-##### Index Route (/):
+Index Route (/):
 
 Serves the homepage, allowing users to navigate to search, recommendations, or curated movie lists.
 
