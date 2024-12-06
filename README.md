@@ -46,5 +46,14 @@ using the TFIDF vectorizer in the sklearn module, we can transform the titles in
 
 setting the ngram_range parameters as 1,2 will help us to weigh combinatos of 1 and 2 words. setting analyzer = ‘char_wb’ creates character n-grams only from text inside word boundaries; n-grams at the edges of words are padded with space.
 
+Now that we have transformed the titles to TFIDF vectors, we can implement the search feature by transforming the query to a TFIDF vector and using cosine_similarity to compare the query vector and the list of title vectors and the titles with greater similarity will have higher weights.
+
+Cosine similarity is a mathematical way to measure the similarity between two vectors or sets of information. It's implemented using the sklearn module.
+np.argpartition gives us the sorted indices of the 5 highest similarites, which is then used to index into the movies dataframe to get the 5 closest search results.
+
+
+
+
+
 
 
